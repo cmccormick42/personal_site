@@ -3,15 +3,42 @@
 </head>
 
 <body>
-  <audio id="player" controls src="<%= Song.find_by(title: 'Oasis').file_url %>"></audio>
+  <audio id="player" src="<%= asset_url('album3/Totally Daft.mp3') %>" ontimeupdate="secondsToDisplay()"></audio>
+  <p>Totally Daft - Chase McCormick</p>
+  <div id="track-clock">Ready to Play</div>
   </br>
-  <button onClick="changeSong()">Next</button>
+  <button class="audio-btn" onClick="playSong()">Play</button>
+  <button class="audio-btn" onClick="pauseSong()">Pause</button>
   </br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/9Ac0K9sDL38" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </br>
+  <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:12uHPX51ubDmWbMYihm0Lf&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+  </br>
+  </br>
+  <iframe src="https://open.spotify.com/embed/album/6QtwclpDAhyYKjlBZN4KfV" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/9Ac0K9sDL38" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 </body>
 <script>
-  function changeSong() {
+  function playSong() {
+    document.getElementById('player').play()
+  }
+
+  function pauseSong() {
+    document.getElementById('player').pause()
+  }
+
+  function secondsToDisplay() {
     player = document.getElementById('player')
-    player.setAttribute('src', '<%= asset_url('album3/TTL.mp3') %>')
+    duration = parseInt(player.duration, 10)
+    durationMins = Math.floor(duration / 60)
+    durationSecs = Math.floor(duration - durationMins*60)
+    durationTensSecs = durationSecs < 10 ? '0' : ''
+
+    currentTime = parseInt(player.currentTime)
+    currentMins = Math.floor(currentTime / 60)
+    currentSecs = Math.floor(currentTime - currentMins*60)
+    currentTensSecs = currentSecs < 10 ? '0' : ''
+
+    displayString = `${currentMins}:${currentTensSecs}${currentSecs} / ${durationMins}:${durationTensSecs}${durationSecs}`
+    document.getElementById('track-clock').innerHTML = displayString
   }
 </script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PersonalSite</title>
+    <title>Chase McCormick</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,14 +11,12 @@
 
   <body>
     <div id="main-content">
-      <div class="header">
-        <h1>Welcome</h1>
-      </div>
+      <div class="header"><h1>Chase McCormick</h1></div>
       </br>
       <span id="open-menu-btn" onclick="openNav()">&#9776; Menu</span>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Home</a>
+        <a href="index">Home</a>
         <a href="songs">Tracks</a>
         <a href="#">Videos</a>
         <a href="#">Graphics</a>
@@ -36,20 +34,20 @@
         <a href="https://github.com/cmccormick42"><%= image_tag 'github.png', class: 'social-icon' %></a>
       </div>
       <div id="footer">
-        <p>Copyright 2019 Chase McCormick</p>
+        <p>Copyright &copy;2019 Chase McCormick</p>
       </div>
     </div>
     <script>
       function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main-content").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "#1A1A1A";
+        // document.body.style.backgroundColor = "#1A1A1A";
       }
 
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main-content").style.marginLeft= "0";
-        document.body.style.backgroundColor = "#232323";
+        // document.body.style.backgroundColor = "#0A0A0A";
       }
     </script>
   </body>

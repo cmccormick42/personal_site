@@ -15,40 +15,58 @@
  */
 
 html, body {
-   background-color: #232323;
+   background-image: url('/assets/static_bg.jpg');
    color: white;
    margin: 0;
    height: 100%;
    position: relative;
-   font-family: ArcadeClassic;
+   font-family: Nasalization;
  }
 
-body {
+/* body {
   transition: background-color .5s;
+} */
+
+@font-face {
+  font-family: AlarmClock;
+  src: url('/assets/alarm_clock.ttf');
 }
 
 @font-face {
-  font-family: ArcadeClassic;
-  src: url('/assets/arcadeclassic.ttf');
+  font-family: Nasalization;
+  src: url('/assets/nasalization.ttf');
 }
 
 .header {
-  background-color: #131313;
-  padding: 10px;
+  /* background-color: #131313; */
+  text-shadow: 6px 6px black;
+  background-size: 100% 100%;
+  height: auto;
+  background-image: url('/assets/0107.jpg');
+  padding: 100px 0 100px 0;
   text-align: center;
   color: white;
   margin: 0;
+  width: 100%;
+}
+
+.header h1{
+  font-size: 100px;
 }
 
 #footer {
-  background-color: #131313;
-  padding: 10px;
+  background-color: #0a0a0a;
+  padding: 10px 0 10px 0;
   text-align: center;
   color: white;
   bottom: 0;
   left: 0;
   position: absolute;
   width: 100%;
+}
+
+button {
+  font-family: Nasalization;
 }
 
 #footer-new {
@@ -69,6 +87,10 @@ body {
   padding-right: 10px;
 }
 
+.social-icon:hover {
+  box-shadow: 2px 2px 2px white;
+}
+
 #main-content {
   text-align: center;
   position: relative;
@@ -82,11 +104,39 @@ body {
   height: 100%;
 }
 
+.audio-btn {
+  width: 80px;
+  height: 30px;
+  background-color: white;
+  border-radius: 15px;
+  border: 3px solid black;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px white;
+  transition: 0.3s;
+}
+
+.audio-btn:hover {
+  background-color: red;
+}
+
+#track-clock {
+  font-family: AlarmClock;
+  font-size: 30px;
+  width: 300px;
+  background-color: black;
+  color: red;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  margin: 0 auto !important;
+  border: 2px solid white;
+}
+
 /* sidenav */
 #open-menu-btn {
   cursor: pointer;
   left: 30px;
-  top: 100px;
+  top: 20px;
   position: fixed;
   font-size: 20px;
   background-color: black;
@@ -102,7 +152,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #0a0a0a;
   overflow-x: hidden;
   transition: 0.5s;
   padding: 10px;
