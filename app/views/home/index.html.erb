@@ -1,0 +1,17 @@
+<head>
+  <title>Chase McCormick | Home</title>
+</head>
+
+<body>
+  <audio id="player" controls src="<%= Song.find_by(title: 'Oasis').file_url %>"></audio>
+  </br>
+  <button onClick="changeSong()">Next</button>
+  </br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/9Ac0K9sDL38" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+<script>
+  function changeSong() {
+    player = document.getElementById('player')
+    player.setAttribute('src', '<%= asset_url('album3/TTL.mp3') %>')
+  }
+</script>

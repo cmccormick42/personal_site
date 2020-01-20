@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html, body {
+   background-color: #232323;
+   color: white;
+   margin: 0;
+   height: 100%;
+   position: relative;
+   font-family: ArcadeClassic;
+ }
+
+body {
+  transition: background-color .5s;
+}
+
+@font-face {
+  font-family: ArcadeClassic;
+  src: url('/assets/arcadeclassic.ttf');
+}
+
+.header {
+  background-color: #131313;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+#footer {
+  background-color: #131313;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+#footer-new {
+  /* background-color: #131313; */
+  padding: 10px;
+  color: white;
+  bottom: 0;
+  right: 5px;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+}
+
+#main-content {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  width: 100%;
+  transition: margin-left .5s;
+}
+
+#content-wrap {
+  height: 100%;
+}
+
+/* sidenav */
+#open-menu-btn {
+  cursor: pointer;
+  left: 30px;
+  top: 100px;
+  position: fixed;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  border-radius: 25px;
+  border: 2px solid white;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: blue;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
