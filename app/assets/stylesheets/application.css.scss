@@ -15,7 +15,7 @@
  */
 
 html, body {
-   background-image: url('/assets/static_bg.jpg');
+   background-image: url(asset-path('static_bg.jpg'));
    color: white;
    margin: 0;
    height: 100%;
@@ -29,12 +29,12 @@ html, body {
 
 @font-face {
   font-family: AlarmClock;
-  src: url('/assets/alarm_clock.ttf');
+  src: url(asset-path('alarm_clock.ttf'));
 }
 
 @font-face {
   font-family: Nasalization;
-  src: url('/assets/nasalization.ttf');
+  src: url(asset-path('nasalization.ttf'));
 }
 
 .header {
@@ -42,7 +42,7 @@ html, body {
   text-shadow: 6px 6px black;
   background-size: 100% 100%;
   height: auto;
-  background-image: url('/assets/0107.jpg');
+  background-image: url(asset-path('0107.jpg'));
   padding: 100px 0 100px 0;
   text-align: center;
   color: white;
